@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Wheel of Names | Random name</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Toppmeny -->
+  <div id="topbar">
+    <span class="logo">wheelofnames.com</span>
+    <div class="menu-right">
+      <span>🎨 Customize</span>
+      <span>📄 New</span>
+      <span>📂 Open</span>
+      <span>💾 Save</span>
+      <span>🔗 Share</span>
+      <span>🔍 Gallery</span>
+      <span>🌐 English</span>
+    </div>
+  </div>
+
+  <!-- Huvudinnehåll -->
+  <div id="container">
+    <!-- Vänstersidan: hjulet -->
+    <div id="left">
+      <h1></h1>
+      <div style="position: relative;">
+        <canvas id="wheel" width="500" height="500"></canvas>
+        <div id="clickMessage">Click to spin</div>
+      </div>
+      <p id="result"></p>
+    </div>
+
+    <!-- Högersidan: namnmeny -->
+    <div id="right">
+      <h2>Names</h2>
+      <textarea id="nameInput" rows="12" cols="20">Erik
+Isak
+Anders
+Sander
+Gustav
+Jonatan
+Markus
+Linus
+Emil
+Billy</textarea><br>
+      <button onclick="updateNames()">Uppdatera hjul</button>
+    </div>
+  </div>
+
+  <!-- Vinnarruta (modal) -->
+  <div id="winnerModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title">We have a winner!</span>
+        <span class="close-button" onclick="closeModal()">&times;</span>
+      </div>
+      <div class="modal-body" id="winnerName">Name</div>
+      <div class="modal-footer">
+        <button onclick="closeModal()">Close</button>
+        <button onclick="removeWinner()">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
